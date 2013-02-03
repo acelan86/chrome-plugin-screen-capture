@@ -462,7 +462,7 @@ function parseAccessToken(senderId, url, siteId) {
   return false;
 }
 
-chrome.extension.onRequest.addListener(function(request, sender) {
+chrome.extension.onMessage.addListener(function(request, sender) {
   switch (request.msg) {
   case 'url_for_access_token':
     parseAccessToken(sender.tab.id, request.url, request.siteId);
